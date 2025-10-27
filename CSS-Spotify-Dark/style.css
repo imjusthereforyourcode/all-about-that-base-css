@@ -1,0 +1,199 @@
+
+/* :root section style sheet variables and can referenced throughout the style sheet for convenience */
+
+@import url("CSS-BASE-Template");
+@font-face {font-family: "Larsseit"; src:url("fonts/Larsseit.otf")}
+@font-face {font-family: "Larsseit-Bold"; src:url("fonts/Larsseit-Bold.otf")}
+@font-face {font-family: "Larsseit-Thin"; src:url("fonts/Larsseit-Thin.otf")}
+
+.font-type-thin {font-family:"Sohne-Leich";}
+.font-type-bold {font-family:"Sohne-Halbfett";}
+
+/* imported special icon fonts */
+
+@font-face {font-family: "Oscar-Origins"; src: url("fonts/Oscar-Origins.ttf")}
+@font-face {font-family: "Oscar-Extras"; src: url("fonts/Oscar-Extras.ttf")}
+
+:root {
+/* pixel variables */ 
+--size-00: 0px;
+--size-01: 1px;
+--size-02: 2px;
+--size-03: 3px;
+--size-05: 5px;
+--size-10: 10px;
+--size-15: 15px;
+--size-20: 20px;
+--size-30: 30px;
+/* color variables */ 
+--color-wht: #ffffff;
+--color-blk: #231f20;
+--color-dgrn: #81c341;
+--color-lgrn: #b3d55b;
+--color-dgry: #939598; 
+--color-lgry: #efedec;
+/* semi-transparent color variables */ 
+--color-o-wht: #ffffff80;
+--color-o-blk: #231f2080;
+--color-o-dgrn: #81c34180;
+--color-o-lgrn: #b3d55b80;
+--color-o-dgry: #93959880; 
+--color-o-lgry: #efedec80;
+/* base color variables */ 
+--color-wht: #ffffff;
+--color-blk: #000000;
+--color-lgy: #d5d5d6;
+--color-dgy: #696969;
+--color-blu: #0166ff;
+--color-cyn: #1bd4db;
+--color-grn: #26db18;
+--color-red: #ee0153;
+--color-mag: #e816b0;
+/* base semi-transparent variables */ 
+--color-o-wht: #ffffff80;
+--color-o-blk: #00000080;
+--color-o-lgy: #f1f1f480;
+--color-o-dgy: #69696980;
+--color-o-blu: #0166ff80;
+--color-o-cyn: #1bd4db80;
+--color-o-grn: #26db1880;
+--color-o-red: #ee015380;
+--color-o-mag: #e816b080;
+--color-trans: #ffffff00;
+--color-indicator-back: #ababab40;
+/* image variables */ 
+--image-indicator-v: url(images/pics/lenovo-bg-dark-lenovo.png);
+--image-indicator-h: url(images/pics/lenovo-bg-dark-lenovo.png);
+--image-led-off: url(images/pics/glossy-red.png);
+--image-led-on: url(images/pics/glossy-green.png);
+--image-logo: url(images/pics/spotify-logo-wht.png);
+--image-background: url(images/pics/bg-dark-4.png);
+/* gradient variables */ 
+--glossy-top: linear-gradient(#ffffff80, #ffffff0d, #ffffff00);
+--glossy-bottom: linear-gradient(#ffffff00, #ffffff00, #ffffff40);
+--gradient-audio-v: linear-gradient(#fe0101, #ffb700, #ccff00, #00ff00);
+--gradient-audio-h: linear-gradient(270deg, #fe0101, #ffb700, #ccff00, #00ff00);
+--gradient-dim-v: linear-gradient(#81c341, #81c34100); 
+--gradient-dim-h: linear-gradient(270deg, #81c341, #81c34100); 
+--gradient-temp-v: linear-gradient(#f8cb07, #24aadc);
+--gradient-temp-h: linear-gradient(270deg, #f8cb07, #24aadc);
+--gradient-gry: linear-gradient(200deg, var(--color-lgry), var(--color-dgry));
+--gradient-gry-o: linear-gradient(200deg, var(--color-o-lgry), var(--color-o-dgry));
+--gradient-grn: linear-gradient(200deg, var(--color-lgrn), var(--color-dgrn));
+--gradient-grn-o: linear-gradient(200deg, var(--color-o-lgrn), var(--color-o-dgrn));
+--gradient-red: linear-gradient(200deg, var(--color-mag), var(--color-red));
+--gradient-red-o: linear-gradient(200deg, var(--color-o-mag), var(--color-o-red));
+--gradient-blu: linear-gradient(200deg, var(--color-cyn), var(--color-blu));
+--gradient-blu-o: linear-gradient(200deg, var(--color-o-cyn), var(--color-o-blu));
+
+/* Adjust Theme colors for the style sheet */
+/* global use variables */
+--global-color: var(--color-lgry);
+--global-bg: var(--color-blk);
+--global-border-color: var(--color-lgry);
+--global-border-radius: var(--size-10);
+--global-border-width: var(--size-03);
+--global-gradient: var(--gradient-grn);
+--global-gradient-o: var(--gradient-grn-o);
+--global-overlay-color: var(--color-indicator-back);
+/* for use in navigation areas of the UCI */
+--navigation-color-off: var(--global-color);
+--navigation-bg-off: var(--global-overlay-color);
+--navigation-border-color-off: var(--global-color);
+--navigation-border-radius-off: var(--size-10);
+--navigation-border-width-off: var(--size-00);
+--navigation-color-on: var(--color-blk);
+--navigation-bg-on: var(--global-gradient);
+--navigation-border-color-on: var(--global-color);
+--navigation-border-radius-on: var(--size-10);
+--navigation-border-width-on: var(--size-00);
+/* for use in central or source selection areas of the UCI */
+--source-color-off: var(--global-color);
+--source-bg-off: var(--global-overlay-color);
+--source-border-color-off: var(--global-color);
+--source-border-radius-off: var(--size-10);
+--source-border-width-off: var(--size-03);
+--source-color-on: var(--color-wht);
+--source-bg-on: var(--global-gradient-o);
+--source-border-color-on: var(--global-color);
+--source-border-radius-on: var(--size-10);
+--source-border-width-on: var(--size-03);
+/* for use in highlight or transport control areas of the UCI */
+--transport-color-off: var(--color-wht);
+--transport-bg-off: var(--global-gradient-o);
+--transport-border-color-off: var(--global-color);
+--transport-border-radius-off: var(--size-10);
+--transport-border-width-off: var(--size-03);
+--transport-color-on:var(--global-color);
+--transport-bg-on: var(--global-overlay-color);
+--transport-border-color-on: var(--global-color);
+--transport-border-radius-on: var(--size-10);
+--transport-border-width-on: var(--size-03);
+/* flexbox row */
+--flex-row-bg: var(--color-trans);
+--flex-row-border-color: var(--color-trans);
+--flex-row-border-radius: var(--size-00);
+--flex-row-border-width: var(--size-00);
+--flex-row-direction: row; /* choose one: row / coloum */
+--flex-row-wrap: wrap; /* choose one: wrap / no wrap */
+--flex-row-justify: center; /* choose one: center / flex start / flex end / space around / space between / space evenly */
+--flex-row-align-content: center; /* choose one: center / flex start / flex end / space around / space between / space evenly */ 
+--flex-row-align-items: center; /* choose one: center / flex start / flex end */ 
+--flex-row-gap: var(--size-10);
+/* flexbox column */
+--flex-column-bg: var(--color-trans);
+--flex-column-border-color: var(--color-trans);
+--flex-column-border-radius: var(--size-00);
+--flex-column-border-width: var(--size-00);
+--flex-column-direction: column; /* choose one: row / coloum */
+--flex-column-wrap: wrap; /* choose one: wrap / no wrap */
+--flex-column-justify: center; /* choose one: center / flex start / flex end / space around / space between / space evenly */
+--flex-column-align-content: center; /* choose one: center / flex start / flex end / space around / space between / space evenly */ 
+--flex-column-align-items: center; /* choose one: center / flex start / flex end */ 
+--flex-column-gap: var(--size-10);
+/* meter style variables */
+--meter-bg: var(--global-overlay-color);
+--meter-indicator-h: var(--global-gradient);
+--meter-indicator-v: var(--global-gradient);
+/* fader style variables */
+--fader-slot: var(--size-15);
+--fader-slot-bg: var(--global-bg);
+--fader-border-radius: var(--global-border-radius);
+--fader-indicator-v: var(--global-gradient);
+--fader-indicator-h: var(--global-gradient);
+--fader-cap-border: var(--global-color);
+--fader-cap-bg: var(--global-overlay-color);
+--fader-bg: var(--global-overlay-color);
+/* company logos and backgrounds */
+--logo: var(--image-logo);
+--logo-background: var(--color-trans);
+--bg: var(--image-background);
+}
+
+textbox {font-family:"Montserrat-Regular"; font-size:24px; padding: 0px; margin: 0px; border-radius: 0px; border-width: 0px;}
+groupbox {font-family:"Montserrat-Regular"; font-size:24px; padding: 0px; margin: 0px; border-radius: 0px; border-width: 0px;}
+textblock {font-family:"Montserrat-Regular"; font-size:24px; padding: 0px; margin: 0px; border-radius: 0px; border-width: 0px;}
+header {font-family:"Montserrat-Regular"; font-size:24px; padding: 0px; margin: 0px; border-radius: 0px; border-width: 0px;}
+button {font-family:"Montserrat-Regular"; font-size:24px; padding: 0px; margin: 0px; border-radius: 0px; border-width: 0px; background-color: var(--color-trans);}
+page {background: var(--bg);}
+
+/*
+
+Copyright 2024 QSC, LLC
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this softwareand associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
